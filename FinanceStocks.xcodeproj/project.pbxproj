@@ -14,6 +14,8 @@
 		236ECC5B2946522D00B2104E /* FinanceStocksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236ECC5A2946522D00B2104E /* FinanceStocksTests.swift */; };
 		236ECC652946522D00B2104E /* FinanceStocksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236ECC642946522D00B2104E /* FinanceStocksUITests.swift */; };
 		236ECC672946522D00B2104E /* FinanceStocksUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236ECC662946522D00B2104E /* FinanceStocksUITestsLaunchTests.swift */; };
+		236ECC752946537900B2104E /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236ECC742946537900B2104E /* Header.swift */; };
+		236ECC78294657DD00B2104E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236ECC77294657DD00B2104E /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		236ECC602946522D00B2104E /* FinanceStocksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinanceStocksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		236ECC642946522D00B2104E /* FinanceStocksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceStocksUITests.swift; sourceTree = "<group>"; };
 		236ECC662946522D00B2104E /* FinanceStocksUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceStocksUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		236ECC742946537900B2104E /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		236ECC77294657DD00B2104E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +98,9 @@
 		236ECC482946522C00B2104E /* FinanceStocks */ = {
 			isa = PBXGroup;
 			children = (
+				236ECC76294657BE00B2104E /* Helpers */,
+				236ECC732946536300B2104E /* Views */,
 				236ECC492946522C00B2104E /* FinanceStocksApp.swift */,
-				236ECC4B2946522C00B2104E /* ContentView.swift */,
 				236ECC4D2946522D00B2104E /* Assets.xcassets */,
 				236ECC4F2946522D00B2104E /* Preview Content */,
 			);
@@ -125,6 +130,23 @@
 				236ECC662946522D00B2104E /* FinanceStocksUITestsLaunchTests.swift */,
 			);
 			path = FinanceStocksUITests;
+			sourceTree = "<group>";
+		};
+		236ECC732946536300B2104E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				236ECC4B2946522C00B2104E /* ContentView.swift */,
+				236ECC742946537900B2104E /* Header.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		236ECC76294657BE00B2104E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				236ECC77294657DD00B2104E /* Extensions.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +280,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				236ECC4C2946522C00B2104E /* ContentView.swift in Sources */,
+				236ECC752946537900B2104E /* Header.swift in Sources */,
 				236ECC4A2946522C00B2104E /* FinanceStocksApp.swift in Sources */,
+				236ECC78294657DD00B2104E /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
