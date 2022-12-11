@@ -11,9 +11,14 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Header()
+            ScrollView(showsIndicators: false) {
+                PortfolioCard()
+                WatchList()
+            }
             Spacer()
         }
         .padding()
+        .edgesIgnoringSafeArea(.bottom)
     }
 }
 
