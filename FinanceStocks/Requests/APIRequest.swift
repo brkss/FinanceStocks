@@ -17,10 +17,10 @@ class APIRequest {
     private var token = "&token=cebke0qad3ib1l38mrpgcebke0qad3ib1l38mrq0";
     
     
-    public func getSymboleQuote(symbol: String){
+    public func getSymboleQuote(symbol: String, handler: @escaping(_ returnedQuotes: Quote?) -> ()){
         let query = "quote?symbol=\(symbol)"
         let url = URL(string: url + query + token)
-      
+        
         if let url = url {
             let task = URLSession.shared.dataTask(with: url) { data, response, error in
                 if let error = error {
@@ -32,7 +32,7 @@ class APIRequest {
                     return;
                 }
                 let returnedQuotes = try? JSONDecoder().decode(Quote.self, from: quoteData)
-                print(returnedQuotes)
+                handler(returnedQuotes)
             }
             task.resume()
         }
@@ -55,6 +55,29 @@ class APIRequest {
                 }
                 let returnedSymbols = try? JSONDecoder().decode(StockSymbolSearch.self, from: searchData)
                 print(returnedSymbols)
+            }
+            task.resume()
+        }
+    }
+        
+    public func getCandles(symbol: String, hourLength: Int){
+        let endDate = Int(Date().timeIntervalSince1970)
+        let startDate = Int(Calendar.current.date(byAdding: .day, value: -(hourLength), to: Date())?.timeIntervalSince1970 ?? Date().timeIntervalSince1970)
+            
+        let q = "stock/candle?symbol=\(symbol)&resolution=5&from=\(startDate)&to=\(endDate)"
+        let url = URL(string: url + q + token);
+        if let url = url {
+            let task = URLSession.shared.dataTask(with: url) { data, response, error in
+                if let error = error {
+                    print("error accured getting calndles: \(error)")
+                    return;
+                }
+                guard let candlesData = data else {
+                    print("invalid candles data !");
+                    return;
+                }
+                let returnedCandles = try? JSONDecoder().decode(Candles.self, from: candlesData)
+                print(returnedCandles)
             }
             task.resume()
         }

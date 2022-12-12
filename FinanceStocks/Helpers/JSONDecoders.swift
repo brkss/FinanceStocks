@@ -31,3 +31,14 @@ struct StockSymbol: Decodable, Hashable {
     let symbol: String;
     let type: String
 }
+
+
+struct Candles: Decodable {
+    let c: [Double];
+    //let h: [Double];
+    //let l: [Double];
+    //let o: [Double];
+    //let s: String;
+    //let t: [Double];
+    //let v: [Double];
+}
