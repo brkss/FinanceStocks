@@ -24,7 +24,9 @@ struct ContentView: View {
                 SearchStockView()
                 .presentationDetents([.height(UIScreen.main.bounds.height * 0.8)])
         }
-        
+        .onAppear{
+            APIRequest.instance.getSymboleQuote(symbol: "AAPL")
+        }
     }
 }
 

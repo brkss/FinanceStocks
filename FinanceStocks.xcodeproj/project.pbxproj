@@ -23,6 +23,8 @@
 		23AD941E29476BCD00A0B410 /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AD941D29476BCD00A0B410 /* LineChart.swift */; };
 		23AD94202947731900A0B410 /* SearchStockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AD941F2947731900A0B410 /* SearchStockView.swift */; };
 		23AD942229477A9A00A0B410 /* StockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AD942129477A9A00A0B410 /* StockCell.swift */; };
+		23AD94252947800A00A0B410 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AD94242947800A00A0B410 /* APIRequest.swift */; };
+		23AD94272947895D00A0B410 /* JSONDecoders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AD94262947895D00A0B410 /* JSONDecoders.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		23AD941D29476BCD00A0B410 /* LineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
 		23AD941F2947731900A0B410 /* SearchStockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStockView.swift; sourceTree = "<group>"; };
 		23AD942129477A9A00A0B410 /* StockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCell.swift; sourceTree = "<group>"; };
+		23AD94242947800A00A0B410 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		23AD94262947895D00A0B410 /* JSONDecoders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoders.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,7 @@
 		236ECC482946522C00B2104E /* FinanceStocks */ = {
 			isa = PBXGroup;
 			children = (
+				23AD942329477FF900A0B410 /* Requests */,
 				23AD941B29476AB800A0B410 /* StockMockData.swift */,
 				236ECC76294657BE00B2104E /* Helpers */,
 				236ECC732946536300B2104E /* Views */,
@@ -166,8 +171,17 @@
 			isa = PBXGroup;
 			children = (
 				236ECC77294657DD00B2104E /* Extensions.swift */,
+				23AD94262947895D00A0B410 /* JSONDecoders.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		23AD942329477FF900A0B410 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				23AD94242947800A00A0B410 /* APIRequest.swift */,
+			);
+			path = Requests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,7 +323,9 @@
 				23AD94202947731900A0B410 /* SearchStockView.swift in Sources */,
 				236ECC4A2946522C00B2104E /* FinanceStocksApp.swift in Sources */,
 				236ECC7E294678CE00B2104E /* WatchList.swift in Sources */,
+				23AD94272947895D00A0B410 /* JSONDecoders.swift in Sources */,
 				23AD941C29476AB800A0B410 /* StockMockData.swift in Sources */,
+				23AD94252947800A00A0B410 /* APIRequest.swift in Sources */,
 				236ECC78294657DD00B2104E /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
