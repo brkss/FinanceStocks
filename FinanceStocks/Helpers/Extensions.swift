@@ -27,7 +27,7 @@ extension Array where Element == CGFloat {
     
     var normalizedValues: [CGFloat] {
         if let min = self.min(), let max = self.max(){
-            return self.map({$0 - min / max - min})
+            return self.map({($0 - min) / (max - min)})
         }
         return []
     }

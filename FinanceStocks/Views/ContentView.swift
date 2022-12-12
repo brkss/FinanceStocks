@@ -21,8 +21,8 @@ struct ContentView: View {
         .padding()
         .edgesIgnoringSafeArea(.bottom)
         .sheet(isPresented: $isShowingStockSearch){
-            Text("Search !")
-                .presentationDetents([.height(UIScreen.main.bounds.height / 2)])
+                SearchStockView()
+                .presentationDetents([.height(UIScreen.main.bounds.height * 0.8)])
         }
         
     }

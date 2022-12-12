@@ -29,12 +29,13 @@ struct WatchListCard: View {
                     .foregroundColor(.lightGreen)
             }
             Spacer()
-            HStack{
+            HStack(alignment: .bottom){
                 Text("$112.58")
                     .bold()
                     .font(.title)
                 Spacer()
-                Text("Graph Here !")
+                LineChart(data: MockData.appl.normalizedValues)
+                    .stroke(Color.lightGreen, lineWidth: 2.2)
             }
         }
         .padding()
