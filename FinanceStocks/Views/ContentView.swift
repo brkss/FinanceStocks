@@ -25,7 +25,7 @@ struct ContentView: View {
                 .presentationDetents([.height(UIScreen.main.bounds.height * 0.8)])
         }
         .onAppear{
-            APIRequest.instance.getSymboleQuote(symbol: "AAPL")
+            APIRequest.instance.getSymbolLookup(searchQuery: "AAPL")
         }
     }
 }

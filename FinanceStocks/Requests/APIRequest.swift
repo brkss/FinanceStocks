@@ -37,4 +37,26 @@ class APIRequest {
             task.resume()
         }
     }
+    
+    public func getSymbolLookup(searchQuery: String){
+        let query: String = "search?q=\(searchQuery)"
+        print("q : \(query)");
+        let url = URL(string: url + query + token)
+        
+        if let url = url {
+            let task = URLSession.shared.dataTask(with: url) { data, response, error in
+                if let error = error {
+                    print("error accured \(error)");
+                    return;
+                }
+                guard let searchData = data else {
+                    print("symbolesearcg data not valid !")
+                    return;
+                }
+                let returnedSymbols = try? JSONDecoder().decode(StockSymbolSearch.self, from: searchData)
+                print(returnedSymbols)
+            }
+            task.resume()
+        }
+    }
 }
