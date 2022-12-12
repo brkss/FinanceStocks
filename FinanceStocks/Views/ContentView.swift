@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var isShowingStockSearch : Bool = false;
     var body: some View {
         VStack {
-            Header()
+            Header(showSheet: $isShowingStockSearch)
             ScrollView(showsIndicators: false) {
                 PortfolioCard()
                 WatchList()
@@ -19,6 +20,11 @@ struct ContentView: View {
         }
         .padding()
         .edgesIgnoringSafeArea(.bottom)
+        .sheet(isPresented: $isShowingStockSearch){
+            Text("Search !")
+                .presentationDetents([.height(UIScreen.main.bounds.height / 2)])
+        }
+        
     }
 }
 
